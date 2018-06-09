@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入站点图标 -->
+    <link rel="icon" href="./images/favicon.ico">
+    <!-- 1.引入miu -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <!-- 2.字体图标库 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 3.引入自己的less文件 -->
+    <link rel="stylesheet/less" href="./less/category.less">
+    <!-- 4.引入less编译脚本 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header id="header">
+        <a href="#" class="fa fa-arrow-left"></a>
+        <form action="#" class="search">
+            <input type="search" placeholder="请输入内容">
+        </form>
+        <a href="#" class="fa fa-search" aria-hidden="true"></a>
+    </header>
+    <!-- 底部 -->
+    <main id="main">
+        <div class="category-left">
+            <ul>
+
+            </ul>
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <!-- 区域滚动的子容器 -->
+                <div class="mui-scroll">
+                    <!-- 真实的滚动的DOM内容 -->
+                    <div class="mui-row">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="./index.html" class="fa fa-home ">
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="./category.html" class="fa fa-bars active">
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#" class="fa fa-shopping-cart">
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="#" class="fa fa-user">
+                    <span>会员中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 5.mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 6.引入zepto -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 7.模板引擎 -->
+    <script src="./lib/artTemplate/template.js"></script>
+    <!-- 8.引入自己的js文件 -->
+    <script src="./js/category.js"></script>
+    <script id="categoryLeft" type="text/html">
+        {{each rows}}
+        <li>
+            <a href="#" data-id="{{$value.id}}">
+                {{$value.categoryName}}
+            </a>
+        </li>
+        {{/each}}
+    </script>
+    <script id="categoryRight" type="text/html">
+        {{each rows}}
+        <div class="mui-col-xs-4">
+            <a href="#">
+                <img src="{{$value.brandLogo}}" alt="">
+                <p>{{$value.brandName}}</p>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+</body>
+
+</html>

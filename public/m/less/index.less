@@ -1,37 +1,68 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-@ltColor:#006699;
-#header{
-    background-color: @ltColor;
-    height: 45px;
-    position: relative;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    >h4{
-        line-height: 45px;
-        text-align: center;
-        color:white;
-        font-weight: normal;
-        font-size: 18px;
-        margin: 0px;
+@import "./bess.less";
+
+
+#main {
+
+  #slide {
+    .mui-slider-item {
+      img {
+        height: 239px;
+      }
     }
-    .fa-search{
-        position: absolute;
-        top:10px;
-        right:10px;
-        font-size: 18px;
-        color: white;
-        padding: 3px;
+  }
+  #nav {
+    padding: 10px 10px 0 10px;
+
+    // border-bottom: 1px solid #666;
+    a {
+      img {
+        width: 100%;
+      }
     }
-}
-#slide{
-    .mui-slider-item{
-        img{
-            height: 239px;
+  }
+  #banner {
+    padding: 0 10px;
+    border-top: 1px solid #ccc;
+    .mui-row {
+      a {
+        img {
+          width: 100%;
         }
+      }
     }
+  }
+  #brand {
+    padding: 0 10px;
+    .title {
+      img {
+        width: 100%;
+      }
+    }
+    .mui-row {
+      > div {
+        > a {
+          > img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  #sport,#girl,#man{
+    padding: 0 10px;
+    .tilte{
+      >a{
+        >img{
+          width:100%;
+        }
+      }
+    }
+    .content{
+      .mui-row{
+      >div{
+        padding: 5px;      
+      }
+      }
+    }
+  }
 }
