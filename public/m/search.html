@@ -13,48 +13,42 @@
     <!-- 2.字体图标库 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
     <!-- 3.引入自己的less文件 -->
-    <link rel="stylesheet/less" href="./less/category.less">
+    <link rel="stylesheet/less" href="./less/search.less">
     <!-- 4.引入less编译脚本 -->
     <script src="./lib/less/less.js"></script>
 </head>
 
 <body>
-    <!-- 头部 -->
     <header id="header">
         <a href="#" class="fa fa-arrow-left"></a>
-        <form action="#" class="search">
-            <input type="search" placeholder="请输入内容">
-        </form>
-        <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+        <h4>搜索中心</h4>
     </header>
-    <!-- 底部 -->
     <main id="main">
-        <div class="category-left">
-            <ul>
-
-            </ul>
+        <div class="search-form">
+            <form action="#">
+                <input type="search" class="search" placeholder="搜索你喜欢的商品">
+                <a href="#" class="mui-btn mui-btn-primary btn-search">搜索</a>
+            </form>
         </div>
-        <div class="category-right">
-            <div class="mui-scroll-wrapper">
-                <!-- 区域滚动的子容器 -->
-                <div class="mui-scroll">
-                    <!-- 真实的滚动的DOM内容 -->
-                    <div class="mui-row">
-
-                    </div>
-                </div>
+        <div class="search-history">
+            <div class="title mui-clearfix">
+                <span class="mui-pull-left">搜索历史</span>
+                <a href="#" class="mui-pull-right fa fa-trash btn-clear">清空记录</a>
+            </div>
+            <div class="content">
+                
             </div>
         </div>
     </main>
     <footer id="footer">
         <div class="mui-row">
             <div class="mui-col-xs-3">
-                <a href="./index.html" class="fa fa-home ">
+                <a href="./index.html" class="fa fa-home active">
                     <span>首页</span>
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="./category.html" class="fa fa-bars active">
+                <a href="./category.html" class="fa fa-bars">
                     <span>分类</span>
                 </a>
             </div>
@@ -70,7 +64,6 @@
             </div>
         </div>
     </footer>
-
     <!-- 5.mui的js文件 -->
     <script src="./lib/mui/js/mui.js"></script>
     <!-- 6.引入zepto -->
@@ -78,25 +71,21 @@
     <!-- 7.模板引擎 -->
     <script src="./lib/artTemplate/template.js"></script>
     <!-- 8.引入自己的js文件 -->
-    <script src="./js/category.js"></script>
-    <script id="categoryLeft" type="text/html">
-        {{each rows}}
-        <li>
-            <a href="#" data-id="{{$value.id}}">
-                {{$value.categoryName}}
+    <script src="./js/search.js"></script>
+    <!-- 模板 -->
+    <script id="searchListTmp" type="text/html">
+        {{if rows.length}}
+        <ul>
+            {{each rows as value i}} 
+            <li>
+            <a href="productlist.html">
+                <span>{{value.search}}</span>
+                <span class="fa fa-times btn-delete" data-id="{{value.id}}"></span>
             </a>
-        </li>
-        {{/each}}
-    </script>
-    <script id="categoryRight" type="text/html">
-        {{each rows}}
-        <div class="mui-col-xs-4">
-            <a href="#">
-                <img src="{{$value.brandLogo}}" alt="">
-                <p>{{$value.brandName}}</p>
-            </a>
-        </div>
-        {{/each}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
     </script>
 </body>
 

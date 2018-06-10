@@ -9,7 +9,7 @@ body {
 img {
   vertical-align: middle;
 }
-input{
+input {
   outline: none;
   border: 0;
 }
@@ -39,18 +39,18 @@ input{
     color: white;
     padding: 3px;
   }
-  .fa-arrow-left{
+  .fa-arrow-left {
     position: absolute;
-    top:10px;
+    top: 10px;
     left: 10px;
     font-size: 18px;
-    color:white;
+    color: white;
     padding: 3px;
   }
-  .search{
+  .search {
     padding: 5px 45px;
     // height: 45px;
-    input{
+    input {
       background-color: #fff;
       height: 30px;
       text-align: left;
@@ -111,6 +111,29 @@ input{
     }
     .old-price {
       color: #666;
+    }
+  }
+}
+// 搜索表单
+.search-form {
+  padding: 10px;
+  > form {
+    position: relative;
+    padding-right: 50px;
+    .search {
+      height: 33px;
+      background-color: white;
+      border: 1px solid #006699;
+      margin-bottom: 0;
+      font-size: 13px;
+      color: #666;
+      text-align: left;
+    }
+    .btn-search {
+      position: absolute;
+      right: 0px;
+      top: 0px;
+      background-color: #006699;
     }
   }
 }
