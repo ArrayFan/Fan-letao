@@ -52,7 +52,7 @@ Letao.prototype = {
             //10.重新获取数据;
             letao.queryHistory();
             //11.
-             window.location.href = 'productlist.html';
+            window.location.href = 'productlist.html';
         })
     },
     queryHistory: function () {
@@ -73,10 +73,11 @@ Letao.prototype = {
         $('.content').html(html);
     },
 
-    deleteHistory:function () { 
-        var that=this;
+    deleteHistory: function () {
+        var that = this;
         $('.content').on('click', '.btn-delete', function () {
-            var id=$(this).data('id');
+            // e.preventDefault();
+            var id = $(this).data('id');
             var arr = window.localStorage.getItem('searchData');
             var id = 0;
             //5.判断当前的arr是否有值
@@ -87,20 +88,20 @@ Letao.prototype = {
             }
 
             //遍历数组
-            for(var i=0; i<arr.length;i++){
-                if (arr[i].id==id) {
-                    arr.splice(i,1)
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].id == id) {
+                    arr.splice(i, 1)
                 }
             }
 
-            window.localStorage.setItem("searchData",JSON.stringify(arr));
+            window.localStorage.setItem("searchData", JSON.stringify(arr));
             letao.queryHistory();
-         })
-     },
-     clearHistory:function () { 
-         $(".btn-clear").on('click',function () { 
-             window.localStorage.setItem('searchData','');
-             letao.queryHistory();
-          })
-      }      
+        })
+    },
+    clearHistory: function () {
+        $(".btn-clear").on('click', function () {
+            window.localStorage.setItem('searchData', '');
+            letao.queryHistory();
+        })
+    }
 }
