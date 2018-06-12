@@ -1,0 +1,64 @@
+@import "./bess.less";
+#main {
+  #product {
+    > div {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 0;
+    }
+    .product-name {
+      font-size: 18px;
+    }
+    .product-price {
+      .new-price {
+        color: red;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .old-price {
+        color: #ccc;
+      } 
+    }
+    .product-size {
+      .btn-size {
+        display: inline-block;
+        border: 1px solid #000;
+        margin-bottom: 10px;
+        padding: 5px;
+        &.active {
+          background-color: orange;
+        }
+      }
+    }
+  }
+}
+#footer {
+  background-color: #cccccc;
+  > a {
+    color: #666;
+    font-size: 20px;
+    position: absolute;
+    left: 20px;
+    top: 13px;
+  }
+  .btnList {
+    padding: 5px 10px 5px 60px;
+    .btn1 {
+      width: 50%;
+      float: left;
+      padding-right: 5px;
+      .btn-add-cart {
+        width: 100%;
+        //   padding: 0 7px;
+      }
+    }
+    .btn2 {
+      width: 50%;
+      float: left;
+      padding-left: 5px;
+      .btn-buy {
+        width: 100%;
+        //   padding: 0 7px;
+      }
+    }
+  }
+}
